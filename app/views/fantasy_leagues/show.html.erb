@@ -1,0 +1,22 @@
+<div id="list_page">
+	<h2 class="quite">Leagues</h2>
+	<div id="name" align="center">
+	
+	<table id="hor-minimalist-b">
+		<thead>
+			<th>League Name</th>
+			<th>League Type</th>
+			<th> </th>
+		</thead>
+		<tbody>
+			<% @fantasy_leagues.each do |league| %>
+			<tr>
+				<td> <%= league.name %> </td>
+				<td> <%= league.league_type_description league.league_type %> </td>
+				<td> <%= link_to 'Create Team', new_fantasy_manager_path(:league_id => league.id) %> </td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+	</div>
+</div>
